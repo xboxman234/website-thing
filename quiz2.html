@@ -1,0 +1,74 @@
+<!-- pick phone number with higher or lower-->
+<style>
+.center {
+
+    text-align: center;
+  }
+  body {
+    background-color: lightblue;
+
+    
+  }
+
+#phone_number{font-size:50px;}
+</style>
+
+
+<div class="center">
+  <h1>Please enter your phone number with this state-of-the-art phone number enterer</h1>
+
+<button onclick="down()" class="button">Lower</button>
+  <button onclick="up()" class="button">Higher</button>
+ 
+</div>
+<div style="text-align: center;">
+<p id="phone_number">500-000-0000</p>
+
+
+ <a href="https://59340fa9-66db-4a28-9180-ff098fdd8d09-00-2po7vmhd34c66.kirk.replit.dev/quiz3.html">
+  <button onclick="loc()">
+    Submit
+  </button>
+  </a>
+</div>
+<script>
+  function rando(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+var pn=5000000000;
+var lowest=1000000000;
+var highest=10000000000;
+function up()
+{
+
+lowest=pn;
+  pn=rando(lowest,highest)
+  document.getElementById("phone_number").innerHTML =String(pn).substring(0, 3)+"-"+String(pn).substring(3, 6)+"-"+String(pn).substring(6, 10)
+  console.log("highest:"+highest);
+console.log("lowest:"+lowest);
+};
+function down()
+{
+highest=pn
+pn=rando(lowest,highest)
+
+document.getElementById("phone_number").innerHTML =String(pn).substring(0, 3)+"-"+String(pn).substring(3, 6)+"-"+String(pn).substring(6, 10);
+console.log("highest:"+highest);
+console.log("lowest:"+lowest);
+};
+
+
+
+
+  
+
+function loc(){
+
+
+  localStorage.setItem("phone",pn)
+}
+
+
+  
+</script>
+  
