@@ -1,0 +1,83 @@
+
+<head><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"></head>
+
+<div style="text-align: center;"><h1>Please enter how much money you make per hour with our advanced temporal system</h1>
+  <h5>Warning: Do not, under ANY circumstances, click the start button two times in a row. <br>This is a very delicate instrument.</h5>
+<div><button onclick="start()">Start</button><button onclick="stop()">Stop</button></div>
+</div>
+<div style="padding-top: 20;"></div>
+<div style="text-align: center;" id="outer">
+<div id="inner"><span id="timer"> 0.00</span>
+  <div style="height:100px:"></div>
+  <a href="quiz5.html">
+  <button onclick="loc()">
+    Submit
+  </button>
+  </a>
+  
+</div>
+
+
+
+
+<style>
+body{
+  background-color: lightblue;
+}
+
+#inner {  
+  border-style: solid;
+  background-color:black;
+  border-width:2px;
+  
+  width:250px;
+  height: 100px;
+ display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  font-family: "Share Tech Mono";
+  font-size:80px;
+  color:white;
+}
+
+#outer {
+  
+  width:100%;
+  display: flex;
+  justify-content: center;
+  
+}
+}
+
+  
+</style>
+
+<script>
+var interval;
+var elapsedTime;
+function start(){
+  
+  
+    idit=true
+  console.log("started")
+  var startTime = Date.now();
+
+ interval = setInterval(function() {
+    elapsedTime = Date.now() - startTime;
+  
+    document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(2);
+}, 100);
+  
+}
+function stop(){
+  clearInterval(interval)
+}
+  function loc(){
+
+
+  localStorage.setItem("money",(elapsedTime / 1000).toFixed(2))
+}
+</script>
