@@ -1,0 +1,151 @@
+<style>
+  body {
+    background-color: lightblue
+  }
+
+  #firstnum:hover {
+    font-size: 40px;
+  }
+
+  #secondnum:hover {
+    font-size: 40px;
+  }
+
+  #thirdnum:hover {
+    font-size: 40px;
+  }
+
+  #fourthnum:hover {
+    font-size: 40px;
+  }
+
+  #finished:hover {
+    font-size: 40px;
+  }
+
+  li:hover {
+    font-size: 20px;
+
+  }
+
+  body:
+</style>
+
+<div style="text-align: center;">
+
+  <h1>Please input your age using our handy-dandy system below</h1>
+  <h4>
+    <ol style="display: inline-block;
+  text-align: left;">
+      <li>Press the Roll button to generate four random numbers</li>
+      <li>Use the drop-downs to modify your equation to make your age</li>
+      <li>If you are unable to make your age then click roll again</li>
+      <li>Finally, once you are finished click the submit button</li>
+
+
+
+
+    </ol>
+
+
+
+
+    </h6>
+    <h6 style="color:red">This equation does not follow order of operations, as its totes lame.</h6>
+
+    <label>Combine:</label>
+    <div>
+      <span id="firstnum">number </span>
+      <select id="first">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+
+      <span id="secondnum"> number </span>
+      <select id="second">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+
+      <span id="thirdnum">number </span>
+      <select id="third">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <span id="fourthnum"> number </span>
+      <span id="finished">=</span>
+
+    </div>
+    <button onclick="roll()" id="rolll">Roll</button>
+    <button onclick="equate()">Equate</button>
+    <div style="height: 100px;"></div>
+    <a href="https://59340fa9-66db-4a28-9180-ff098fdd8d09-00-2po7vmhd34c66.kirk.replit.dev/quiz6.html">
+      <button onclick="loc()">
+        Submit
+      </button>
+    </a>
+
+</div>
+
+<script>
+  var firstnum;
+
+  var secondnum;
+  var thirdnum;
+  var fourthnum;
+
+
+  var operators = {
+    '+': function (a, b) {return a + b},
+    '-': function (a, b) {return a - b},
+    '*': function (a, b) {return a * b},
+    '/': function (a, b) {return a / b},
+  }
+
+
+
+  function roll() {
+    firstnum = Math.floor(Math.random() * 10) + 1;
+    secondnum = Math.floor(Math.random() * 10) + 1;
+    thirdnum = Math.floor(Math.random() * 10) + 1;
+    fourthnum = Math.floor(Math.random() * 10) + 1;
+
+
+    document.getElementById("firstnum").innerHTML = firstnum;
+    document.getElementById("secondnum").innerHTML = secondnum;
+    document.getElementById("thirdnum").innerHTML = thirdnum;
+    document.getElementById("fourthnum").innerHTML = fourthnum;
+    document.getElementById("finished").innerHTML = "=";
+
+  }
+
+  function equate() {
+    var firstset;
+    var secondset;
+    firstset = operators[document.getElementById("first").value](firstnum, secondnum)
+    secondset = operators[document.getElementById("third").value](thirdnum, fourthnum);
+
+    document.getElementById("finished").innerHTML = "=" + (operators[document.getElementById("second").value](firstset, secondset)).toString();
+
+return (operators[document.getElementById("second").value](firstset, secondset)).toString();
+
+  }
+
+
+function loc(){
+
+
+  localStorage.setItem("age",equate())
+}
+
+
+</script>
