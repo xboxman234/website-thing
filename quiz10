@@ -1,0 +1,105 @@
+<style>
+  body {
+    background-color: lightblue;
+  }
+</style>
+<div style="text-align:center">
+  <h1> Please Pick a username using our fast inputing system below</h1>
+  <h6>Pressing left or right will take those specifically letters and distribute them among both sides. Stratigicly
+    press lower and higher to influence the randomness to your desired letter</h6>
+</div>
+<br><br><br><br><br>
+<div>
+  
+  <h3 style="text-align: center;" id="letterfr"></h3>
+  <h4 id="final"></h4>
+
+
+  </h3>
+  <button onclick="first()">First Half</button><button onclick="second()">Second
+    Half</button>
+</div><br><button onclick="retry()">Retry</button><button onclick="add()">Add Letter</button><a href="quiz11.html">
+      <button onclick="loc()">
+        Submit
+      </button>
+    </a>
+
+
+
+
+
+
+
+
+<script>
+
+
+  alph = "abcdefghijklmnopqrstuvwxyz1234567890_"
+  console.log(alph.slice(5, 10))
+  for (let i = 0; i < 29; i++) {
+    document.getElementById("letterfr").innerHTML += alph[Math.floor(Math.random() * alph.length)][0]
+  }
+  document.getElementById("letterfr").innerHTML += "||"
+  for (let i = 0; i < 29; i++) {
+    document.getElementById("letterfr").innerHTML += alph[Math.floor(Math.random() * alph.length)][0]
+  }
+
+
+
+  function first() {
+   
+    split = document.getElementById("letterfr").innerHTML.slice(0, 29)
+    console.log(split)
+    document.getElementById("letterfr").innerHTML = ""
+
+
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += split[Math.floor(Math.random() * split.length)][0]
+    }
+    document.getElementById("letterfr").innerHTML += "||"
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += split[Math.floor(Math.random() * split.length)][0]
+    }
+
+
+
+  }
+  function second() {
+    split = document.getElementById("letterfr").innerHTML.slice(31, 60)
+    console.log(split)
+    document.getElementById("letterfr").innerHTML = ""
+
+
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += split[Math.floor(Math.random() * split.length)][0]
+    }
+    document.getElementById("letterfr").innerHTML += "||"
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += split[Math.floor(Math.random() * split.length)][0]
+    }
+  }
+
+
+
+
+
+  function retry() {
+
+    document.getElementById("letterfr").innerHTML = ""
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += alph[Math.floor(Math.random() * alph.length)][0]
+    }
+    document.getElementById("letterfr").innerHTML += "||"
+    for (let i = 0; i < 29; i++) {
+      document.getElementById("letterfr").innerHTML += alph[Math.floor(Math.random() * alph.length)][0]
+    }
+
+  }
+  function add() {
+    balls = document.getElementById("letterfr").innerHTML.slice(0, 29) + document.getElementById("letterfr").innerHTML.slice(31, 60)
+    if (balls.split('').every(char => char === balls[0])) {
+      document.getElementById("final").innerHTML += document.getElementById("letterfr").innerHTML[0]
+    }
+
+  }
+</script>
