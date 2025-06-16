@@ -1,0 +1,163 @@
+<style>
+  body {
+    background-color: lightblue
+  }
+
+  /* style 
+  
+  password stupid password mulitple cheks like bakwards and upsideaon and up and down 10 
+  
+  
+  */
+</style>
+
+<head>
+  <div style="text-align:center">
+    <h1>
+
+      Please create a password (all lowercase)
+    </h1>
+    <h5>Please inlude exactly 7 numbers</h6>
+      <h5>Please inlude exactly 15 letters</h6>
+        <h5>Please inlude exactly 8 special characters</h6>
+          <br>
+          Password:
+          <input id="first" size="30" /><br>
+          Confirm Password:
+          <input id="second" size="30" /><br>
+          Confirm Password Backwards:
+          <input id="third" size="30" /> <br>
+          Confirm Password but every two letters are switched:
+          <input id="fourth" size="30" /><br>
+          Confirm Password with letters for numbers and numbers for letters:
+          <input id="fifth" size="30" /><br>
+          <button onclick="submit()">Submit</button>
+          <p id="errors" style="color:red;"></p>
+  </div>
+
+
+</head>
+<script>
+
+  var alph = "abcdefghijklmnopqrstuvwxyz"
+  function numforlet(pass) {
+    fin = ""
+    regex1 = /[a-zA-Z]/gi
+    regex2 = /[0-9]/gi
+    for (let i = 0; i < pass.length; i++) {
+      if (pass[i].match(regex1)) {
+        fin += (alph.indexOf(pass[i]) + 1).toString()
+        continue
+
+      } else {
+        if (pass[i].match(regex2)) {
+          fin += alph[parseInt(pass[i]) - 1]
+          continue
+        }
+      }
+
+      fin += pass[i]
+
+    }
+    console.log(fin)
+    return fin
+  }
+
+  function checkPass(pass) {
+    regex1 = /[a-zA-Z]/gi
+    regex2 = /[0-9]/gi
+    regex3 = /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/gs
+    if (pass.match(regex1) == null || pass.match(regex1).length != 15) {
+      document.getElementById("errors").innerHTML = "There is not 15 letters!"
+      return false
+    }
+    if (pass.match(regex2) == null || pass.match(regex2).length != 7) {
+      document.getElementById("errors").innerHTML = "There is not 7 numbers!"
+      return false
+    }
+    if (pass.match(regex3) == null || pass.match(regex3).length != 8) {
+
+      document.getElementById("errors").innerHTML = "There is not 8 special charcters!"
+      return false
+    }
+
+    document.getElementById("errors").innerHTML = " "
+    return true
+  }
+  function check1(balls) {
+    var splitString = balls.split("");
+
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join("");
+
+    return joinArray;
+
+  }
+
+  function letter2swap(pass) {
+    val = "1234567890"
+    val.split("")
+
+    var str1 = pass.split("");
+    var str2 = ""
+    var str3 = ""
+    var final = ""
+    var l = 0;
+
+    for (let i = 0; i < pass.length; i++) {
+      if (i % 2 == 0) {
+
+        str3 = [str1[i], str1[i + 1]];
+
+        str2 = str3.reverse();
+
+        final += str2.join("");
+
+
+      }
+    }
+
+    return final
+
+  }
+
+  pass = document.getElementById("first")
+
+
+  function submit() {
+
+    pass = document.getElementById("first").value
+    numforlet(pass)
+    console.log(letter2swap(pass))
+
+    if (checkPass(pass)) {
+      if (pass == document.getElementById("second").value) {
+
+        if (document.getElementById("third").value == check1(first.value)) {
+          if (document.getElementById("fourth").value == letter2swap(pass)) {
+            if (document.getElementById("fifth").value == numforlet(pass)) {
+              location.href = 'quiz10.html';
+            } else {
+              document.getElementById("errors").innerHTML = "Those letters are not changed from and to letters!"
+            }
+
+          } else {
+            document.getElementById("errors").innerHTML = "That isnt the pasword with leters swapped!"
+          }
+
+        } else {
+          document.getElementById("errors").innerHTML = "That isnt the pasword backwards!"
+        }
+      } else {
+        document.getElementById("errors").innerHTML = "This isnt the same password!"
+      }
+    }
+
+
+
+
+  }
+
+
+
+</script>
