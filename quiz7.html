@@ -1,415 +1,222 @@
-<style>
-body{
-  background-color: lightblue;
+<style>body{background-color: lightblue;}
+
+#container {
+    width: 400px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+} /*https://www.worldometers.info/geography/flags-of-the-world/*/
+
+ul{
+  font-size:10px;
+  display: inline-block;
+  text-align: left
+}
+img{
+
+
+  height:100px;
+}
+#thelist{
+
+overflow-y:auto
+  
 }
 
-
-  
 </style>
 
 
-<div style="text-align: center;">
-<h1>Please write a paragraph about your mental health using our system below</h1>
+<div style="text-align:center">
 
-  <form action="quiz8.html">
+
+
+  <h1>Please enter your country with this usefully simple flag indicator</h1>
+
+
+
+
+
+  <div style="height:100px" ><img id="pic" src="flags/ques.png" alt="Italian Trulli"></div> 
+  <div>
+  <button onclick="add('bar')">bar</button>
+<button onclick="add('line')">line</button>
+<button onclick="add('star')">star</button>
+<button onclick="add('face')">face</button>
+<button onclick="add('animal')">animal</button>
+<button onclick="add('moon')">moon</button>
+<button onclick="add('sun')">sun</button>
+<button onclick="add('red')">red</button>
+<button onclick="add('orange')">orange</button>
+<button onclick="add('yellow')">yellow</button>
+<button onclick="add('green')">green</button>
+<button onclick="add('blue')">blue</button>
+<button onclick="add('purple')">purple</button>
+<button onclick="add('black')">black</button>
+<button onclick="add('white')">white</button>
+<button onclick="add('tool')">tool</button>
+<button onclick="add('triangle')">triangle</button>
+<button onclick="add('square')">square</button>
+<button onclick="add('circle')">circle</button>
+<button onclick="add('plant')">plant</button>
+<button onclick="add('emblem')">emblem</button>
+<button onclick="add('the shape of a country')">the shape of a country</button>
+<button onclick="add('plus')">plus</button>
+<button onclick="add('paper')">paper</button>
+<button onclick="add('hilt')">hilt</button>
+<button onclick="add('string')">string</button>
+<button onclick="add('words')">words</button>
+<button onclick="add('weapon')">weapon</button>
+<button onclick="add('shield')">shield</button>
+<button onclick="add('pattern')">pattern</button>
+<button onclick="add('bell')">bell</button>
+<button onclick="add('cross')">cross</button>
+<button onclick="add('fire')">fire</button>
+<button onclick="add('book')">book</button>
+<button onclick="add('letter')">letter</button>
+<button onclick="add('diamond')">diamond</button>
+<button onclick="add('line with angle')">line with angle</button>
+
+
+
+    
+  </div>
+  <br>
+<button onclick="next()">Next</button><button onclick="add()">Add</button><button onclick="check()">Check</button>
   
-  <input type="text" id="a" value="Text" oninput="update()"><br>
-  <input type="text" id="s" value="Text"oninput="update()"><br>
-  <input type="text" id="d" value="Text"oninput="update()"><br>
-  <input type="text" id="f" value="Text"oninput="update()"><br>
-  <input type="text" id="g" value="Text"oninput="update()"><br>
-  <input type="text" id="h" value="Text"oninput="update()"><br>
-  <input type="text" id="j" value="Text"oninput="update()"><br>
-  <input type="text" id="k" value="Text"oninput="update()"><br>
-  <input type="text" id="l" value="Text"oninput="update()"><br>
-  <input type="text" id=";" value="Text"oninput="update()"><br>
-  <input type="text" id="n" value="Text"oninput="update()"><br>
-  
-  
-  
-</form> 
-<a href="https://bad-ui.tylersolid1.repl.co/quiz7.html">
-      <button>
+</div>
+<div id="container"><div style="background-color: white;height: 200px;text-align: center;overflow-y:auto;"><ul id="thelist"></ul></div></div><a href="quiz8.html">
+      <button onclick="loc()">
         Submit
       </button>
     </a>
-</div>
-<div>
-  <span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="six">Text </span>
-<span id="six">Text </span>
-<span id="nine">Text </span>
-<span id="ten">Text </span>
-<span id="two">Text </span>
-<span id="five">Text </span>
-<span id="ten">Text </span>
-<span id="seven">Text </span>
-<span id="six">Text </span>
-<span id="eleven">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="ten">Text </span>
-<span id="ten">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="eleven">Text </span>
-<span id="nine">Text </span>
-<span id="seven">Text </span>
-<span id="eleven">Text </span>
-<span id="ten">Text </span>
-<span id="nine">Text </span>
-<span id="eight">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="seven">Text </span>
-<span id="nine">Text </span>
-<span id="one">Text </span>
-<span id="one">Text </span>
-<span id="eleven">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="four">Text </span>
-<span id="two">Text </span>
-<span id="eleven">Text </span>
-<span id="five">Text </span>
-<span id="nine">Text </span>
-<span id="two">Text </span>
-<span id="six">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="six">Text </span>
-<span id="three">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="two">Text </span>
-<span id="seven">Text </span>
-<span id="six">Text </span>
-<span id="nine">Text </span>
-<span id="one">Text </span>
-<span id="five">Text </span>
-<span id="five">Text </span>
-<span id="seven">Text </span>
-<span id="eleven">Text </span>
-<span id="six">Text </span>
-<span id="seven">Text </span>
-<span id="eleven">Text </span>
-<span id="three">Text </span>
-<span id="two">Text </span>
-<span id="two">Text </span>
-<span id="six">Text </span>
-<span id="five">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="two">Text </span>
-<span id="three">Text </span>
-<span id="seven">Text </span>
-<span id="ten">Text </span>
-<span id="eleven">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="nine">Text </span>
-<span id="eleven">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="three">Text </span>
-<span id="eleven">Text </span>
-<span id="six">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="seven">Text </span>
-<span id="seven">Text </span>
-<span id="four">Text </span>
-<span id="one">Text </span>
-<span id="eleven">Text </span>
-<span id="eleven">Text </span>
-<span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="nine">Text </span>
-<span id="one">Text </span>
-<span id="ten">Text </span>
-<span id="ten">Text </span>
-<span id="eleven">Text </span>
-<span id="five">Text </span>
-<span id="two">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="eleven">Text </span>
-<span id="one">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="ten">Text </span>
-<span id="three">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="five">Text </span>
-<span id="one">Text </span>
-<span id="six">Text </span>
-<span id="four">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="eight">Text </span>
-<span id="three">Text </span>
-<span id="eight">Text </span>
-<span id="two">Text </span>
-<span id="three">Text </span>
-<span id="eight">Text </span>
-<span id="nine">Text </span>
-<span id="nine">Text </span>
-<span id="one">Text </span>
-<span id="five">Text </span>
-<span id="five">Text </span>
-<span id="two">Text </span>
-<span id="six">Text </span>
-<span id="one">Text </span>
-<span id="two">Text </span>
-<span id="six">Text </span>
-<span id="eleven">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="five">Text </span>
-<span id="six">Text </span>
-<span id="one">Text </span>
-<span id="eight">Text </span>
-<span id="eleven">Text </span>
-<span id="seven">Text </span>
-<span id="four">Text </span>
-<span id="five">Text </span>
-<span id="one">Text </span>
-<span id="six">Text </span>
-<span id="six">Text </span>
-<span id="nine">Text </span>
-<span id="eight">Text </span>
-<span id="ten">Text </span>
-<span id="seven">Text </span>
-<span id="four">Text </span>
-<span id="seven">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="ten">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="eleven">Text </span>
-<span id="ten">Text </span>
-<span id="eight">Text </span>
-<span id="one">Text </span>
-<span id="three">Text </span>
-<span id="five">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="ten">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="five">Text </span>
-<span id="seven">Text </span>
-<span id="ten">Text </span>
-<span id="eight">Text </span>
-<span id="six">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="six">Text </span>
-<span id="five">Text </span>
-<span id="four">Text </span>
-<span id="four">Text </span>
-<span id="six">Text </span>
-<span id="five">Text </span>
-<span id="ten">Text </span>
-<span id="two">Text </span>
-<span id="five">Text </span>
-<span id="seven">Text </span>
-<span id="eleven">Text </span>
-<span id="six">Text </span>
-<span id="ten">Text </span>
-<span id="two">Text </span>
-<span id="four">Text </span>
-<span id="eleven">Text </span>
-<span id="nine">Text </span>
-<span id="nine">Text </span>
-<span id="six">Text </span>
-<span id="three">Text </span>
-<span id="one">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="five">Text </span>
-<span id="six">Text </span>
-<span id="four">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="five">Text </span>
-<span id="nine">Text </span>
-<span id="eleven">Text </span>
-<span id="seven">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="seven">Text </span>
-<span id="one">Text </span>
-<span id="ten">Text </span>
-<span id="five">Text </span>
-<span id="one">Text </span>
-<span id="three">Text </span>
-<span id="nine">Text </span>
-<span id="three">Text </span>
-<span id="three">Text </span>
-<span id="seven">Text </span>
-<span id="seven">Text </span>
-<span id="seven">Text </span>
-<span id="seven">Text </span>
-<span id="two">Text </span>
-<span id="six">Text </span>
-<span id="eight">Text </span>
-<span id="nine">Text </span>
-<span id="nine">Text </span>
-<span id="two">Text </span>
-<span id="seven">Text </span>
-<span id="nine">Text </span>
-<span id="seven">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="nine">Text </span>
-<span id="ten">Text </span>
-<span id="five">Text </span>
-<span id="three">Text </span>
-<span id="eight">Text </span>
-<span id="eleven">Text </span>
-<span id="four">Text </span>
-<span id="four">Text </span>
-<span id="eight">Text </span>
-<span id="five">Text </span>
-<span id="one">Text </span>
-<span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="one">Text </span>
-<span id="seven">Text </span>
-<span id="three">Text </span>
-<span id="eleven">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="five">Text </span>
-<span id="two">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="one">Text </span>
-<span id="seven">Text </span>
-<span id="one">Text </span>
-<span id="eleven">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="three">Text </span>
-<span id="six">Text </span>
-<span id="six">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="six">Text </span>
-<span id="one">Text </span>
-<span id="four">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="five">Text </span>
-<span id="five">Text </span>
-<span id="two">Text </span>
-<span id="ten">Text </span>
-<span id="six">Text </span>
-<span id="one">Text </span>
-<span id="three">Text </span>
-<span id="four">Text </span>
-<span id="one">Text </span>
-<span id="seven">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="four">Text </span>
-<span id="three">Text </span>
-<span id="ten">Text </span>
-<span id="four">Text </span>
-<span id="five">Text </span>
-<span id="four">Text </span>
-<span id="one">Text </span>
-<span id="nine">Text </span>
-<span id="six">Text </span>
-<span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="one">Text </span>
-<span id="five">Text </span>
-<span id="ten">Text </span>
-<span id="eleven">Text </span>
-<span id="five">Text </span>
-<span id="eight">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="eleven">Text </span>
-<span id="ten">Text </span>
-<span id="nine">Text </span>
-<span id="four">Text </span>
-<span id="ten">Text </span>
-<span id="two">Text </span>
-<span id="eight">Text </span>
-<span id="three">Text </span>
-<span id="four">Text </span>
-<span id="seven">Text </span>
-<span id="eight">Text </span>
-<span id="four">Text </span>
-<span id="ten">Text </span>
-<span id="eight">Text </span>
-<span id="two">Text </span>
-<span id="eleven">Text </span>
-<span id="five">Text </span>
-<span id="five">Text </span>
-
-
-
-
-
-
-
-
-
-
-
-  
-</div>
-
-
 
 
 <script>
-  var one = document.querySelectorAll('#one');
-  var two = document.querySelectorAll('#two');
-  var three = document.querySelectorAll('#three');
-  var four = document.querySelectorAll('#four');
-  var five = document.querySelectorAll('#five');
-  var six = document.querySelectorAll('#six');
-  var seven = document.querySelectorAll('#seven');
-  var eight = document.querySelectorAll('#eight');
-  var nine = document.querySelectorAll('#nine');
-  var ten = document.querySelectorAll('#ten');
-  var eleven = document.querySelectorAll('#eleven');
 
-  var contain = [one,two,three,four,five,six,seven,eight,nine,ten,eleven]
-  var badidea = ["a","s","d","f","g","h","j","k","l",";","n"]
-function update(){
+
+afghanistan=["black","white","green","red","emblem","flags/Afghanistan.png"],
+albania=["emblem","red","black","flags/Albania.png"],
+algeria=["red","green","white","moon","star","flags/Algeria.png"]
+
+
+/*United Kingdom: ["cross", "red", "white", "blue"]
+Japan: ["circle", "red", "white"]
+Canada: ["maple leaf", "red", "white"]
+France: ["stripe", "blue", "white", "red"]
+Germany: ["black", "red", "yellow"]
+Italy: ["green", "white", "red"]
+Australia: ["Southern Cross", "red", "white", "blue"]
+China: ["star", "red"]
+Brazil: ["green", "yellow", "blue"]
+South Africa: ["rainbow", "black", "white", "green", "yellow", "red"]
+United Kingdom: ["bar", "line", "cross", "red", "white", "blue"]
+Japan: ["circle", "red", "white"]
+Canada: ["maple leaf", "bar", "red", "white"]
+France: ["bar", "stripe", "blue", "white", "red"]
+Germany: ["black", "red", "yellow", "bar"]
+Italy: ["bar", "green", "white", "red"]
+Australia: ["bar", "Southern Cross", "red", "white", "blue"]
+China: ["star", "red", "bar"]
+Brazil: ["bar", "green", "yellow", "blue"]
+South Africa: ["bar", "emblem", "black", "white", "green", "yellow", "red"]*/
+unitedstates=["star","red","blue","white","bar","square","flags/unitedstates.png"]
+
+  totalcountries=[afghanistan,albania,algeria,unitedstates]
+
+
+
+
+
+
+
+
+
+const eio = (a, b) => {
+  if (a.length !== b.length) return false;
+  const uniqueValues = new Set([...a, ...b]);
+  for (const v of uniqueValues) {
+    const aCount = a.filter(e => e === v).length;
+    const bCount = b.filter(e => e === v).length;
+    if (aCount !== bCount) return false;
+  }
+  return true;
+}
+
+
+
+
+
+const variableToString = varObj => Object.keys(varObj)[0];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+currentflag="none";
+  
+stuff="";
+function next() {
+    possible=["bar","line","star","face","animal","moon","sun","red","orange","yellow","green","blue","purple","black","white","tool","triangle","square","circle","plant","emblem","the shape of a country","plus","paper","hilt","string","words","weapon","shield","pattern","bell","cross","fire","book","letter","diamond","line with angle"];
+
+    stuff=possible[Math.floor(Math.random() * possible.length)];
+  document.getElementById("word").innerHTML = stuff
+  
+}
+
+
+
 
   
-for (var m = 0; m < contain.length; m++) {
-// Loop through all the elements and update their content
-for (var i = 0; i < contain[m].length; i++) {
-  contain[m][i].textContent = document.getElementById(badidea[m]).value; // Replace "New content" with the desired new value
+
+
+var current="";
+function add(thing){
+  stuff=thing
+  var node = document.createElement('li');
+node.appendChild(document.createTextNode(stuff));
+ 
+document.querySelector('ul').appendChild(node);
+
+current=stuff
+  console.log(current);
+  current=current.replace(/(\<li\>)+/g,"");
+  current=current.replace(/(\<\/li\>)+/g,"");
+  myarr.push(current);
+  
+  current=""
+    
 }
 
+myarr=[]
+function check(){
+  console.log(myarr)
+for (let i = 0; i < totalcountries.length; i++) {
+if (eio(myarr,totalcountries[i].slice(0, -1))){
+  console.log(":)")
+
+  currentflag=totalcountries[i].slice(-1);
+  document.getElementById("pic").src=currentflag
+  console.log(currentflag)
+  localStorage.setItem("country",totalcountries[i].slice(-1))
 }
-
-
 
   
 }
+  
+}
+
+  
 
   
 </script>
+
